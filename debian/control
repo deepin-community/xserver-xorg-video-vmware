@@ -1,0 +1,36 @@
+Source: xserver-xorg-video-vmware
+Section: x11
+Priority: optional
+Maintainer: Deepin Developer <deepin-dev@deepin.org>
+Build-Depends:
+ debhelper-compat (= 12),
+ quilt,
+ pkg-config,
+ xserver-xorg-dev (>= 2:1.9.4),
+ x11proto-dev,
+ xutils-dev (>= 1:7.5+4),
+ libdrm-dev [!hurd-i386],
+ libudev-dev [linux-any],
+ libxext-dev,
+ libx11-dev,
+ libxatracker-dev [linux-any],
+Standards-Version: 4.5.0
+#Vcs-Git
+#Vcs-Browser
+
+Package: xserver-xorg-video-vmware
+Architecture: any-amd64 any-i386
+Depends:
+ ${shlibs:Depends},
+ ${misc:Depends},
+ ${xviddriver:Depends},
+Provides:
+ ${xviddriver:Provides}
+Description: X.Org X server -- VMware display driver
+ This package provides the driver for VMware client sessions, i.e. if Linux
+ is running inside a VMware session.
+ .
+ More information about X.Org can be found at:
+ <URL:http://www.X.org>
+ .
+ This package is built from the X.org xf86-video-vmware driver module.
